@@ -19,7 +19,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements-dev.txt
       - run: ruff check pipeline tests
-      - run: pytest -q
+      - run: python -m pytest -q
 
   container:
     runs-on: ubuntu-latest
@@ -51,4 +51,3 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: bash -n scripts/deploy.sh
-
